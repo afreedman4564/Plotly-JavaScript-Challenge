@@ -7,7 +7,7 @@ function demographicData(name)
     // console.log(name);
 
     d3.json("samples.json").then((data) =>
-    {
+    {       
     let metaData = data.metadata;
     // console.log(metaData);
 
@@ -138,121 +138,6 @@ function buildBubbleGraph(name)
 });
 
 }
-
-// build a gauge
-// function buildGauge(name)
-// {
-//     d3.json("samples.json").then((data) =>
-//     {
-//     let metaData = data.metadata;
-//     // console.log(metaData);
-
-//     // filter on name to capture appropriate metadata element based on name
-//     let result = metaData.filter(nameOutput => nameOutput.id == name);
-//     let resultWFreq = result[0].wfreq;
-//     console.log("new metadata for gauge");
-//     console.log(resultWFreq);
-
-
-//     // var data = [
-//     //     {
-//     //         domain: { x: [-1, 1], y: [0, 1] },
-//     //         value: resultWFreq,
-//     //         title: { text: "Washing Frequency"},
-//     //         type: "indicator",
-//     //         mode: "gauge+number",
-//     //         gauge: {
-//     //             axis: {
-//     //                 range: [null, 10]
-//     //             },
-//     //             steps: [
-//     //               { range: [0, 1], color: "85FF33"},
-//     //               { range: [1, 2], color: "6DFF33"},
-//     //               { range: [2, 3], color: "40FF33" },
-//     //               { range: [3, 4], color: "33FF59" },
-//     //               { range: [4, 5], color: "33FF83" },
-//     //               { range: [5, 6], color: "33FFA7" },
-//     //               { range: [6, 7], color: "33FFE0" },
-//     //               { range: [7, 8], color: "33E9FF" },
-//     //               { range: [8, 9], color: "33BFFF" },
-//     //               { range: [9, 10], color: "33A1FF" }
-//     //             ]
-//     //         }
-//     //     }
-//     // ];
-  
-//     let trace = [
-//         {
-//             mode: "gauge",
-//             type: "indicator",
-//             value: resultWFreq,
-    
-//             gauge: {
-//                 shape: "angular",
-//                 bar: {
-//                     color: "blue",
-//                     line: {
-//                         color: "red",
-//                         width: 4
-//                     },  
-//                     thickness: 0
-//                 },
-//                 bgcolor: "#388",
-//                 bordercolor: "#a89d32",
-//                 borderwidth: 3,
-//                 axis: {
-//                     range: [0,10],
-//                     visible: true,
-//                     tickmode: "array",
-//                     tickvals: [5, 10, 40, 80, 100],
-//                     ticks: "outside"
-//                 },
-//                             steps: [
-//                               { range: [0, 1], color: "85FF33"},
-//                               { range: [1, 2], color: "6DFF33"},
-//                               { range: [2, 3], color: "40FF33" },
-//                               { range: [3, 4], color: "33FF59" },
-//                               { range: [4, 5], color: "33FF83" },
-//                               { range: [5, 6], color: "33FFA7" },
-//                               { range: [6, 7], color: "33FFE0" },
-//                               { range: [7, 8], color: "33E9FF" },
-//                               { range: [8, 9], color: "33BFFF" },
-//                               { range: [9, 10], color: "33A1FF" }
-//                             ]
-//             }
-//         }
-//     ]
-//     var degrees = resultWFreq*18
-//     // var theta = 93.5
-//     var r = .5
-//     var radians = degrees * Math.PI / 180
-//     var x = radius * Math.cos(radians);
-//     var y = radius * Math.sin(radians);
-//     // var x_head = r * math.PI/Math.cos(theta)
-//     let layout = {
-//       xaxis: {range: [0, 1], showgrid: false, 'zeroline': false, 'visible': false},
-//       yaxis: {range: [0, 1], showgrid: false, 'zeroline': false, 'visible': false},
-//       showlegend: false,
-//       annotations: [
-//         {
-//           ax: 0.5,
-//           ay: 0,
-//           axref: 'x',
-//           ayref: 'y',
-//           x: 0.5+x_head,
-//           y: y_head,
-//           xref: 'x',
-//           yref: 'y',
-//           showarrow: true,
-//           arrowhead: 125,
-//         }
-//       ]
-//     };
-
-//     Plotly.newPlot("gauge", trace, layout);
-
-//     });
-// }
 
 function initialize()
     {d3.json("samples.json").then((data) =>
